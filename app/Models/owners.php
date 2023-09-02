@@ -13,4 +13,6 @@ class owners extends Model
         'id', 'name', 'company_name', 'email', 'address', 'phone', 'user_id',
         'created_at', 'updated_at'
     ];
+
+    
 }

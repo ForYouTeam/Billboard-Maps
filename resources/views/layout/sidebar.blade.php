@@ -7,7 +7,7 @@
     </a>
     <hr class="sidebar-divider my-0">
     <li class="nav-item active">
-      <a class="nav-link" href="index.html">
+      <a class="nav-link" href="{{route('dashboard')}}">
         <i class="fas fa-fw fa-tachometer-alt"></i>
         <span>Dashboard</span></a>
     </li>
@@ -16,13 +16,13 @@
       Features
     </div>
     <li class="nav-item">
-      <a class="nav-link" href="ui-colors.html">
+      <a class="nav-link" href="{{route('bo-billboard')}}">
         <i class="fas fa-map"></i>
         <span>Billboard</span>
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="ui-colors.html">
+      <a class="nav-link" href="{{route('bo-owners')}}">
         <i class="fas fa-users"></i>
         <span>Pemilik</span>
       </a>

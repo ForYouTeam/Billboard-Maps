@@ -4,6 +4,7 @@
 <head>
   @include('layout.top')
 </head>
+@yield('style')
 
 <body id="page-top">
   <div id="wrapper">
