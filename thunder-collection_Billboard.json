@@ -1,0 +1,229 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Billboard",
+    "dateExported": "2023-09-02T01:16:57.815Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "9e08f7c8-2d68-4b7a-9139-dee84dac42ab",
+            "name": "Owners",
+            "containerId": "",
+            "created": "2023-08-31T23:53:37.640Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "521d4760-349f-414a-8397-43a1d2d02a5c",
+            "name": "Billboard",
+            "containerId": "",
+            "created": "2023-09-02T00:18:05.637Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "3055fe66-019f-4740-8f4b-6a7ab8cb79b9",
+            "name": "Images",
+            "containerId": "",
+            "created": "2023-09-02T00:33:42.558Z",
+            "sortNum": 30000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "018b2c7d-4989-4b76-b5cb-4c4c65640be3",
+            "colId": "181f5561-0e34-46ba-a11d-c6df44b8024e",
+            "containerId": "9e08f7c8-2d68-4b7a-9139-dee84dac42ab",
+            "name": "Get All",
+            "url": "{{base_url}}/api/v1/owners",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-08-31T23:53:44.047Z",
+            "modified": "2023-08-31T23:54:26.594Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "3055d793-50b7-40c6-b639-58f1ab91d2c8",
+            "colId": "181f5561-0e34-46ba-a11d-c6df44b8024e",
+            "containerId": "521d4760-349f-414a-8397-43a1d2d02a5c",
+            "name": "Get All",
+            "url": "{{base_url}}/api/v1/billboard",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-09-02T00:18:05.637Z",
+            "modified": "2023-09-02T00:18:25.459Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "24709459-2cb4-476c-912e-b04c092c20ae",
+            "colId": "181f5561-0e34-46ba-a11d-c6df44b8024e",
+            "containerId": "3055fe66-019f-4740-8f4b-6a7ab8cb79b9",
+            "name": "Get All",
+            "url": "{{base_url}}/api/v1/images",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-09-02T00:33:42.558Z",
+            "modified": "2023-09-02T00:33:51.998Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "ecc26dcb-56c7-4532-bb25-46e436a0230b",
+            "colId": "181f5561-0e34-46ba-a11d-c6df44b8024e",
+            "containerId": "9e08f7c8-2d68-4b7a-9139-dee84dac42ab",
+            "name": "Get By Id",
+            "url": "{{base_url}}/api/v1/owners/1",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-09-01T00:02:55.895Z",
+            "modified": "2023-09-01T00:03:12.295Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "3bb94781-3dba-4b83-95db-6c648d816619",
+            "colId": "181f5561-0e34-46ba-a11d-c6df44b8024e",
+            "containerId": "521d4760-349f-414a-8397-43a1d2d02a5c",
+            "name": "Get By Id",
+            "url": "{{base_url}}/api/v1/billboard/1",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-09-02T00:18:05.638Z",
+            "modified": "2023-09-02T00:20:29.447Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "7cc210cd-17db-4299-a35c-cffd6ec68470",
+            "colId": "181f5561-0e34-46ba-a11d-c6df44b8024e",
+            "containerId": "3055fe66-019f-4740-8f4b-6a7ab8cb79b9",
+            "name": "Get By Id",
+            "url": "{{base_url}}/api/v1/images/5",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-09-02T00:33:42.559Z",
+            "modified": "2023-09-02T01:06:44.131Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "735a8450-281d-479d-a5eb-ff98b2ca52a7",
+            "colId": "181f5561-0e34-46ba-a11d-c6df44b8024e",
+            "containerId": "9e08f7c8-2d68-4b7a-9139-dee84dac42ab",
+            "name": "Delete",
+            "url": "{{base_url}}/api/v1/owners/1",
+            "method": "DELETE",
+            "sortNum": 25000,
+            "created": "2023-09-01T00:12:55.122Z",
+            "modified": "2023-09-01T00:13:09.828Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "56ef13d6-8699-4ab6-9e36-e8c6bcceebb5",
+            "colId": "181f5561-0e34-46ba-a11d-c6df44b8024e",
+            "containerId": "521d4760-349f-414a-8397-43a1d2d02a5c",
+            "name": "Delete",
+            "url": "{{base_url}}/api/v1/billboard/1",
+            "method": "DELETE",
+            "sortNum": 25000,
+            "created": "2023-09-02T00:18:05.639Z",
+            "modified": "2023-09-02T00:20:41.896Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "85a1a0aa-3f28-45b0-8f9c-e0c6a749d85e",
+            "colId": "181f5561-0e34-46ba-a11d-c6df44b8024e",
+            "containerId": "3055fe66-019f-4740-8f4b-6a7ab8cb79b9",
+            "name": "Delete",
+            "url": "{{base_url}}/api/v1/images/8",
+            "method": "DELETE",
+            "sortNum": 25000,
+            "created": "2023-09-02T00:33:42.560Z",
+            "modified": "2023-09-02T01:13:59.823Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "73f28882-3650-4f2a-8e02-4b44f34d8d23",
+            "colId": "181f5561-0e34-46ba-a11d-c6df44b8024e",
+            "containerId": "9e08f7c8-2d68-4b7a-9139-dee84dac42ab",
+            "name": "Upsert",
+            "url": "{{base_url}}/api/v1/owners",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2023-09-01T00:04:05.235Z",
+            "modified": "2023-09-01T00:10:14.974Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n \"name\": \"wandi\",\n \"company_name\": \"pt maju mundur\",\n \"email\": \"wandi@mail.com\",\n \"address\": \"jl asam no 150 palubarat\",\n \"phone\": \"6281275564857\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "74bdb8ab-ea15-4397-bd52-06d077056fa6",
+            "colId": "181f5561-0e34-46ba-a11d-c6df44b8024e",
+            "containerId": "521d4760-349f-414a-8397-43a1d2d02a5c",
+            "name": "Upsert",
+            "url": "{{base_url}}/api/v1/billboard",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2023-09-02T00:18:05.640Z",
+            "modified": "2023-09-02T00:26:20.689Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n \"latitude\": \"0880022\",\n \"longtitude\": \"12055949\",\n \"address\": \"my address\",\n \"media_type\": \"billboard\",\n \"pole_height\": 5,\n \"height\": 15,\n \"width\": 25,\n \"description\": \"no desc\",\n \"price\": 200000,\n \"owner_id\": 2,\n \"empty\": true\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "19e7256b-4cc4-4d15-9bcb-7262ba55d7b2",
+            "colId": "181f5561-0e34-46ba-a11d-c6df44b8024e",
+            "containerId": "3055fe66-019f-4740-8f4b-6a7ab8cb79b9",
+            "name": "Upsert",
+            "url": "{{base_url}}/api/v1/images",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2023-09-02T00:33:42.561Z",
+            "modified": "2023-09-02T01:02:44.615Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "billboard_id",
+                        "value": "2"
+                    }
+                ],
+                "files": [
+                    {
+                        "name": "image_path[]",
+                        "value": "/home/cherryapple/Downloads/vehicle-icon.png"
+                    },
+                    {
+                        "name": "image_path[]",
+                        "value": "/home/cherryapple/Downloads/Upan/IURAN PINTAR-USECASE.drawio.png"
+                    }
+                ]
+            },
+            "tests": []
+        }
+    ]
+}
