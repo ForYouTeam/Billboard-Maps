@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name', 150);
             $table->string('email', 50)->unique();
+            $table->string('company_name');
             $table->text('address');
             $table->string('phone', 20);
             $table->foreignId('user_id')->nullable()->constrained('users')->onDelete('set null');
