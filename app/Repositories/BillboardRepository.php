@@ -68,7 +68,7 @@ class BillboardRepository implements BillboardContract
       $find = $this->billboardModel->whereId($id)->first();
 
       if (!$find) {
-        return $this->error('user not found', 404);
+        return $this->error('data not found', 404);
       }
 
       return $this->success($find, "success getting data");
