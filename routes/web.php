@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\Backoffice\BillboardController;
+use App\Http\Controllers\Backoffice\DashboardController;
+use App\Http\Controllers\Backoffice\OwnerController;
+use App\Http\Controllers\Backoffice\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+Route::get('/manage-user', [UserController::class, 'index'])->name('bo-user');
+Route::get('/owners', [OwnerController::class, 'index'])->name('bo-owners');
+Route::get('/billboard', [BillboardController::class, 'index'])->name('bo-billboard');

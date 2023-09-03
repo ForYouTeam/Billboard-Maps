@@ -21,7 +21,7 @@ class BillboardRepository implements BillboardContract
   {
     try {
 
-      $data = $this->billboardModel->all();
+      $data = $this->billboardModel->joinList()->get();
 
       return $this->success($data, "success getting data");
 

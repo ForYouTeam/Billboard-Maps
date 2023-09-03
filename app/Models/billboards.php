@@ -13,4 +13,14 @@ class billboards extends Model
         'id', 'latitude', 'longtitude', 'address', 'media_type', 'pole_height',
         'height', 'width', 'description', 'price', 'owner_id', 'empty', 'created_at', 'updated_at'
     ];
+
+    public function scopejoinList($query)
+    {
+        return $query
+            ->leftJoin('owners as m1', 'billboards.owner_id', 'm1.id')
+            ->select(
+                'billboards.*'        ,
+                'm1.name as nama_owner'      ,
+            );
+    }
 }

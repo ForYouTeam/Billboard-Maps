@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Backoffice;
 
 use App\Contracts\BillboardContract;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\BillboardRequest;
+use App\Models\owners;
 use App\Repositories\BillboardRepository;
 use Illuminate\Http\Request;
 
@@ -15,12 +17,18 @@ class BillboardController extends Controller
         $this->billboardRepo = new BillboardRepository;
     }
 
+    public function index()
+    {
+        $data = owners::all();
+        return view('backoffice.billboard', compact('data'));
+    }
+
     public function getAllData(){
         $result = $this->billboardRepo->getAllPayload([]);
         return response()->json($result, $result['code']);
     }
 
-    public function upsertData(Request $request){
+    public function upsertData(BillboardRequest $request){
         $id = $request->id | null;
         $result = $this->billboardRepo->upsertPayload($id, $request->except('_token'));
 
