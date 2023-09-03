@@ -72,7 +72,7 @@ class ImageRepository implements ImageContract
       $find = $this->imageModel->whereId($id)->first();
 
       if (!$find) {
-        return $this->error('user not found', 404);
+        return $this->error('data not found', 404);
       }
 
       return $this->success($find, "success getting data");
@@ -87,14 +87,16 @@ class ImageRepository implements ImageContract
   {
     try {
 
-      $find = $this->getPayloadById($id);
-      if ($find['code'] != 200) {
-        return $find;
+      $find = $this->imageModel->where('billboard_id', $id);
+
+      if ($find->count() < 1) {
+        return $this->error('image not found', 404);
       }
 
-      $db = $this->imageModel->whereId($id);
-      Storage::delete($db->first()['image_path']);
-      $data = $db->delete();
+      foreach ($find->get() as $image) {
+        Storage::delete($image['image_path']);
+        $data = $this->imageModel->whereId($image['id'])->delete();
+      }
 
       return $this->success($data, "success deleting data");
     } catch (\Throwable $th) {

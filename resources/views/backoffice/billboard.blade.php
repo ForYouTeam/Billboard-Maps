@@ -350,10 +350,6 @@
 
             let totalFiles = document.getElementById("image_path").files.length;
 
-            for (let i = 0; i < totalFiles; i++) {
-                data.append("image_path[]", document.getElementById("image_path").files[i]);
-            }
-
             $.ajax({
                 url: `${baseUrl}/api/v1/images`,
                 method: "POST",
