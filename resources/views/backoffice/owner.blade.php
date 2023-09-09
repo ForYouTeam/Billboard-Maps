@@ -42,8 +42,8 @@
           <div class="modal-content p-3 p-md-5">
             <div class="modal-body">
               <div class="text-center mb-4">
-                <h6 id="#modalheader" class="modal-title"><b>TAMBAH DATA</b></h6>
-                <p class="text-primary"><b>JURUSAN</b></p>
+                <h6 id="modalheader" class="modal-title"><b>TAMBAH DATA</b></h6>
+                <p class="text-primary"><b>OWNERS</b></p>
                 <hr>
               </div>
               <form id="formData" class="row g-3" onsubmit="return false">
@@ -152,6 +152,7 @@
         $(document).on('click', '#btn-edit', function() {
             clearInput()
             let dataId = $(this).data('id')
+            $('#modalheader').html('EDIT DATA')
             $.get(`${baseUrl}/api/v1/owners/${dataId}`, (res) => {
                 let data = res.data
                 $.each(data, (i,d) => {
@@ -174,6 +175,7 @@
         function createData()
         {
             clearInput()
+            $('#modalheader').html('TAMBAH DATA')
             $('#modal-data').modal('show');
             $('#phone').val('62')
         }
@@ -243,10 +245,10 @@
                         <tr>
                             <td>${i + 1}</td>
                             <td class="text-capitalize">${d.name}</td>
-                            <td class="text-capitalize">${d.email}</td>
+                            <td>${d.email}</td>
                             <td class="text-capitalize">${d.company_name}</td>
                             <td class="text-capitalize">${d.address}</td>
-                            <td class="text-capitalize">${d.phone}</td>
+                            <td>${d.phone}</td>
                             <td>
                                 <button id="btn-edit" data-id="${d.id}" class="btn rounded btn-sm btn-outline-primary mr-1"><i class="fa fa-edit"></i></button>
                                 <button id="btn-del" data-id="${d.id}" class="btn rounded btn-sm btn-outline-danger"><i class="fa fa-trash"></i></button>
