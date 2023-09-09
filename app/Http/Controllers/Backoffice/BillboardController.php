@@ -3,18 +3,22 @@
 namespace App\Http\Controllers\Backoffice;
 
 use App\Contracts\BillboardContract;
+use App\Contracts\ImageContract;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\BillboardRequest;
 use App\Models\owners;
 use App\Repositories\BillboardRepository;
+use App\Repositories\ImageRepository;
 use Illuminate\Http\Request;
 
 class BillboardController extends Controller
 {
     private BillboardContract $billboardRepo;
+    private ImageContract $imageRepo;
     public function __construct()
     {
         $this->billboardRepo = new BillboardRepository;
+        $this->imageRepo     = new ImageRepository    ;
     }
 
     public function index()
@@ -42,6 +46,12 @@ class BillboardController extends Controller
     }
 
     public function deleteData(int $id = 0) {
+        $images = $this->imageRepo->deletePayload($id);
+        
+        if ($images['code'] !== 200) {
+            return response()->json($images, $images['code']); 
+        }
+
         $result = $this->billboardRepo->deletePayload($id);
         return response()->json($result, $result['code']);
     }
