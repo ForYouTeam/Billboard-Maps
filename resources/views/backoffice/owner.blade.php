@@ -1,9 +1,12 @@
 @extends('layout.base')
+@section('title')
+    Pemilik
+@endsection
 @section('content')
 <div class="col-lg-12">
     <div class="card mb-4">
       <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-        <h5 class="m-0 font-weight-bold text-primary">Data Akun</h5>
+        <h5 class="m-0 font-weight-bold text-primary">Data Pemilik</h5>
         <h6 class="float-right"><button class="btn btn-outline-primary" onclick="createData()"><i class="fa fa-plus"></i> Tambah Data</button></h6>
       </div>
       <div class="table-responsive p-3">
@@ -38,7 +41,7 @@
 
     {{-- Modal --}}
     <div class="modal fade" id="modal-data" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered1 modal-simple modal-add-new-cc">
+        <div class="modal-dialog modal-lg modal-dialog-centered1 modal-simple modal-add-new-cc">
           <div class="modal-content p-3 p-md-5">
             <div class="modal-body">
               <div class="text-center mb-4">

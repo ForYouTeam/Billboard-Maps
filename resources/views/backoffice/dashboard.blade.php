@@ -1,4 +1,7 @@
 @extends('layout.base')
+@section('title')
+    Home
+@endsection
 @section('content')
 <div class="row mb-3">
     <div class="col-xl-3 col-md-6 mb-4">

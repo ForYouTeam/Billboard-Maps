@@ -34,7 +34,8 @@
     <div class="container d-flex align-items-center">
 
       <div class="logo me-auto">
-        <h1><a href="index.html">Lumia</a></h1>
+        {{-- Billboard-App --}}
+        <h1><a href="index.html" class="text-capitalize">Billboard-App</a></h1>
       </div>
 
       <nav id="navbar" class="navbar order-last order-lg-0">
