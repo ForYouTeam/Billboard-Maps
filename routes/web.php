@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Backoffice\AuthController;
 use App\Http\Controllers\Backoffice\BillboardController;
 use App\Http\Controllers\Backoffice\DashboardController;
 use App\Http\Controllers\Backoffice\OwnerController;
@@ -17,7 +18,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
-Route::get('/manage-user', [UserController::class, 'index'])->name('bo-user');
-Route::get('/owners', [OwnerController::class, 'index'])->name('bo-owners');
-Route::get('/billboard', [BillboardController::class, 'index'])->name('bo-billboard');
+// Route Backoffice
+Route::get('/dashboard'            , [DashboardController ::class, 'index'])->middleware('auth'                          )->name('dashboard'    );
+Route::get('/manage-user' , [UserController      ::class, 'index'])->middleware('auth', 'role:super-admin|admin')->name('bo-user'      );
+Route::get('/owners'      , [OwnerController     ::class, 'index'])->middleware('auth', 'role:super-admin|admin')->name('bo-owners'    );
+Route::get('/billboard'   , [BillboardController ::class, 'index'])->middleware('auth', 'role:super-admin|admin')->name('bo-billboard' );
+Route::get('/users'       , [UserController      ::class, 'index'])->middleware('auth', 'role:super-admin'      )->name('bo-users'     );
+// end
+
+Route::get('/', function(){
+    return view('web.index');
+});
+
+
+
+Route::get ('/login'         , [AuthController ::class, 'index'  ])->name('login'         );
+Route::post('/login-process' , [AuthController ::class, 'login'  ])->name('login-process' );
+Route::get ('/logout'        , [AuthController ::class, 'logout' ])->name('logout'        );

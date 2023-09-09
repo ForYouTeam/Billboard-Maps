@@ -54,6 +54,7 @@ class UserRepository implements UserContract
     try {
       
       $payload['password'] = Hash::make($payload['password']);
+      $payload['scope'] = 'admin';
 
       if ($id) {
 
@@ -76,6 +77,8 @@ class UserRepository implements UserContract
           'data' => $this->userModel->create($payload),
           'message' => 'Created data successfully'
         ];
+
+        $result['data']->assignRole('admin');
 
       }
 

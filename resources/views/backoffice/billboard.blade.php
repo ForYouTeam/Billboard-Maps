@@ -68,32 +68,31 @@
       <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
         <h5 class="m-0 font-weight-bold text-primary">Data Akun</h5>
         <h6 class="float-right"><button class="btn btn-outline-primary" onclick="createData()"><i class="fa fa-plus"></i> Tambah Data</button></h6>
+        
       </div>
       <div class="table-responsive p-3">
         <table class="table align-items-center table-flush table-hover" id="data-tabel">
           <thead class="thead-light">
             <tr>
               <th style="width: 5px">No</th>
+              <th>Pemilik</th>
+              <th>Alamat</th>
               <th>Latitude</th>
               <th>Longtitude</th>
-              <th>Alamat</th>
-              <th>Tipe Media</th>
-              <th>Deskripsi</th>
               <th>Harga</th>
-              <th>Pemilik</th>
+              <th>Status</th>
               <th style="width: 150px">Action</th>
             </tr>
           </thead>
           <tfoot>
             <tr>
               <th style="width: 5px">No</th>
+              <th>Pemilik</th>
+              <th>Alamat</th>
               <th>Latitude</th>
               <th>Longtitude</th>
-              <th>Alamat</th>
-              <th>Tipe Media</th>
-              <th>Deskripsi</th>
               <th>Harga</th>
-              <th>Pemilik</th>
+              <th>Status</th>
               <th>Action</th>
             </tr>
           </tfoot>
@@ -121,73 +120,83 @@
                         <input type="hidden" name="id" id="id">
                         <div class="form-group">
                           <label for="" class="">Latitude</label>
-                          <input type="number" class="form-control" name="latitude" id="latitude" placeholder="Input disini">
+                          <input type="number" class="form-control val" name="latitude" id="latitude" placeholder="Input disini">
+                          <span class="text-danger small alrt" id="latitude-alert"></span>
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="form-group">
                           <label for="" class="">Longtitude</label>
-                          <input type="number" class="form-control" name="longtitude" id="longtitude" placeholder="Input disini">
+                          <input type="number" class="form-control val" name="longtitude" id="longtitude" placeholder="Input disini">
+                          <span class="text-danger small alrt" id="longtitude-alert"></span>
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="form-group">
                           <label for="" class="">Alamat</label>
-                          <input type="text" class="form-control" name="address" id="address" placeholder="Input disini">
+                          <input type="text" class="form-control val" name="address" id="address" placeholder="Input disini">
+                          <span class="text-danger small alrt" id="address-alert"></span>
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="form-group">
                           <label for="" class="">Tipe Media</label>
-                          <input type="text" class="form-control" name="media_type" id="media_type" placeholder="Input disini">
+                          <input type="text" class="form-control val" name="media_type" id="media_type" placeholder="Input disini">
+                          <span class="text-danger small alrt" id="media_type-alert"></span>
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="form-group">
                           <label for="" class="">Tinggi Tiang</label>
-                          <input type="number" class="form-control" name="pole_height" id="pole_height" placeholder="Input disini">
+                          <input type="number" class="form-control val" name="pole_height" id="pole_height" placeholder="Input disini">
+                          <span class="text-danger small alrt" id="pole_height-alert"></span>
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="form-group">
                           <label for="" class="">Panjang</label>
-                          <input type="number" class="form-control" name="height" id="height" placeholder="Input disini">
+                          <input type="number" class="form-control val" name="height" id="height" placeholder="Input disini">
+                          <span class="text-danger small alrt" id="height-alert"></span>
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="form-group">
                           <label for="" class="">Lebar</label>
-                          <input type="number" class="form-control" name="width" id="width" placeholder="Input disini">
+                          <input type="number" class="form-control val" name="width" id="width" placeholder="Input disini">
+                          <span class="text-danger small alrt" id="width-alert"></span>
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="form-group">
                           <label for="" class="">Deskripsi</label>
-                          <input type="text" class="form-control" name="description" id="description" placeholder="Input disini">
+                          <input type="text" class="form-control val" name="description" id="description" placeholder="Input disini">
+                          <span class="text-danger small alrt" id="description-alert"></span>
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="form-group">
                           <label for="" class="">Harga</label>
-                          <input type="number" class="form-control" name="price" id="price" placeholder="Input disini">
+                          <input type="number" class="form-control val" name="price" id="price" placeholder="Input disini">
+                          <span class="text-danger small alrt" id="price-alert"></span>
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="form-group">
                           <label for="" class="">Pemilik</label>
-                          <select name="owner_id" id="owner_id" class="form-control">
+                          <select name="owner_id" id="owner_id" class="form-control val">
                             <option value="" selected disabled>-- Pilih --</option>
                             @foreach ($data as $owner)
                                 <option value="{{$owner->id}}">{{$owner->name}}</option>
                             @endforeach
                           </select>
+                          <span class="text-danger small alrt" id="owner_id-alert"></span>
                         </div>
                       </div>
                   </div>
                 </div>
                 <div class="col-12 text-center">
                   <label class="switch">
-                    <input type="checkbox" name="empty" id="empty" value="0" onclick="">
+                    <input type="checkbox" name="empty" id="empty">
                     <span class="slider round"></span>
                   </label><br>
                     <button onclick="postData()" class="btn btn-outline-primary my-3" style="margin-right: 0.5rem">Simpan</button>
@@ -214,18 +223,13 @@
               @csrf
               <label for="">Gambar</label>
               <div class="form-group">
-                {{-- <div class="custom-file">
-                  <input type="hidden" name="billboard_id" id="billboard_id">
-                  <input type="file" name="image_path[]" class="custom-file-input" id="image_path" multiple="multiple">
-                  <label class="custom-file-label" for="customFile">Choose file</label>
-                </div> --}}
                 <input type="hidden" name="billboard_id" id="billboard_id">
-                <input type="file" name="image_path[]" id="image_path" accept="image/*" multiple>
+                <input type="file" name="image_path[]" id="image_path" accept="image/*" class="form-control" multiple>
                 <div class="mt-3" id="image_preview"></div>
               </div>
               <div class="col-12 text-center">
                   <button type="button" id="btn-simpan" class="btn btn-outline-primary my-3" style="margin-right: 0.5rem">Simpan</button>
-                  <button type="reset" class="btn btn-outline-danger" onclick="closeModal()">Cancel</button>
+                  <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Cancel</button>
               </div>
             </form>
           </div>
@@ -307,6 +311,12 @@
                 $.each(data, (i,d) => {
                     if (i != "created_at" && i != "updated_at") {
                         $(`#${i}`).val(d)
+                        var isChecked = $("#empty").val();
+                        if (isChecked == 1) {
+                            $("#empty").prop("checked", true);
+                        } else {
+                            $("#empty").prop("checked", false);
+                        }
                     }
                 })
                 $('#modal-data').modal('show')
@@ -459,19 +469,25 @@
             $('#data-tabel').DataTable().destroy()
             $.get(`${baseUrl}/api/v1/billboard`, (res) => {
                 let data = res.data
-
                 $('#tbody').html('')
                 $.each(data, (i,d) => {
+                    let empty = d.empty
+                    let status = ''
+                    
+                    if (empty == 1) {
+                      status = '<span class="badge badge-success p-1">Tersedia</span>'
+                    } else{
+                      status = '<span class="badge badge-danger p-1">Tidak Tersedia</span>'
+                    }
                     $('#tbody').append(`
                         <tr>
                             <td>${i + 1}</td>
+                            <td class="text-capitalize">${d.nama_owner}</td>
+                            <td class="text-capitalize">${d.address}</td>
                             <td class="text-capitalize">${d.latitude}</td>
                             <td class="text-capitalize">${d.longtitude}</td>
-                            <td class="text-capitalize">${d.address}</td>
-                            <td class="text-capitalize">${d.media_type}</td>
-                            <td class="text-capitalize">${d.description}</td>
-                            <td class="text-capitalize">${d.price}</td>
-                            <td class="text-capitalize">${d.nama_owner}</td>
+                            <td class="text-capitalize">Rp.${d.price}</td>
+                            <td class="text-capitalize" id="status">${status}</td>
                             <td>
                                 <button id="btn-gambar" data-id="${d.id}" class="btn rounded btn-sm btn-outline-success"><i class="fa fa-image"></i></button>
                                 <button id="btn-edit" data-id="${d.id}" class="btn rounded btn-sm btn-outline-primary mr-1"><i class="fa fa-edit"></i></button>
@@ -480,7 +496,6 @@
                         </tr>
                     `)
                 })
-
                 $('#data-tabel').DataTable();
             })
             .fail((err) => {

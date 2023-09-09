@@ -6,6 +6,7 @@
       <div class="sidebar-brand-text mx-3">RuangAdmin</div>
     </a>
     <hr class="sidebar-divider my-0">
+    @hasrole('super-admin|admin')
     <li class="nav-item active">
       <a class="nav-link" href="{{route('dashboard')}}">
         <i class="fas fa-fw fa-tachometer-alt"></i>
@@ -27,15 +28,18 @@
         <span>Pemilik</span>
       </a>
     </li>
+    @endhasrole
+    @hasrole('super-admin')
     <hr class="sidebar-divider">
     <div class="sidebar-heading">
       Manage User
     </div>
     <li class="nav-item">
-      <a class="nav-link" href="ui-colors.html">
+      <a class="nav-link" href="{{route('bo-user')}}">
         <i class="fas fa-user"></i>
         <span>Akun</span>
       </a>
     </li>
+    @endhasrole
     
   </ul>
