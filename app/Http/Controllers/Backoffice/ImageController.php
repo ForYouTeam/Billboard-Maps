@@ -16,7 +16,8 @@ class ImageController extends Controller
     }
 
     public function getAllData(){
-        $result = $this->imageRepo->getAllPayload([]);
+        $billboardId = request('billboard_id');
+        $result = $this->imageRepo->getAllPayload(['billboard_id' => $billboardId]);
         return response()->json($result, $result['code']);
     }
 
