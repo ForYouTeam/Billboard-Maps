@@ -123,14 +123,14 @@
                         <input type="hidden" name="id" id="id">
                         <div class="form-group">
                           <label for="" class="">Latitude</label>
-                          <input type="number" class="form-control val" name="latitude" id="latitude" placeholder="Input disini">
+                          <input type="text" class="form-control val" name="latitude" id="latitude" placeholder="Input disini">
                           <span class="text-danger small alrt" id="latitude-alert"></span>
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="form-group">
                           <label for="" class="">Longtitude</label>
-                          <input type="number" class="form-control val" name="longtitude" id="longtitude" placeholder="Input disini">
+                          <input type="text" class="form-control val" name="longtitude" id="longtitude" placeholder="Input disini">
                           <span class="text-danger small alrt" id="longtitude-alert"></span>
                         </div>
                       </div>
@@ -144,7 +144,11 @@
                       <div class="col-md-6">
                         <div class="form-group">
                           <label for="" class="">Tipe Media</label>
-                          <input type="text" class="form-control val" name="media_type" id="media_type" placeholder="Input disini">
+                          <select name="media_type" id="media_type" class="form-control">
+                            <option value="" selected disabled>-- Pilih --</option>
+                            <option value="videotrone">Videotrone</option>
+                            <option value="billboard">Billboard</option>
+                          </select>
                           <span class="text-danger small alrt" id="media_type-alert"></span>
                         </div>
                       </div>
@@ -316,9 +320,9 @@
                         $(`#${i}`).val(d)
                         var isChecked = $("#empty").val();
                         if (isChecked == 1) {
-                            $("#empty").prop("checked", true);
+                          $("#empty").prop("checked", false);
                         } else {
-                            $("#empty").prop("checked", false);
+                          $("#empty").prop("checked", true);
                         }
                     }
                 })
@@ -474,9 +478,9 @@
                     let status = ''
                     
                     if (empty == 1) {
-                      status = '<span class="badge badge-success p-1">Tersedia</span>'
-                    } else{
                       status = '<span class="badge badge-danger p-1">Tidak Tersedia</span>'
+                    } else{
+                      status = '<span class="badge badge-success p-1">Tersedia</span>'
                     }
                     $('#tbody').append(`
                         <tr>
