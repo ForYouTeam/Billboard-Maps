@@ -3,7 +3,7 @@
       <div class="sidebar-brand-icon">
         
       </div>
-      <div class="sidebar-brand-text mx-3"><img src="logo.png" style="max-width: 100%;"></div>
+      <div class="sidebar-brand-text mx-3"><img src="{{asset('logo.png')}}" style="max-width: 100%;"></div>
     </a>
     <hr class="sidebar-divider my-0">
     @hasrole('super-admin|admin')
