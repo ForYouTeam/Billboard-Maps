@@ -23,7 +23,11 @@ class ImageRepository implements ImageContract
   {
     try {
 
-      $data = $this->imageModel->all();
+      $query = $this->imageModel::query();
+      if ($payload['billboard_id']) {
+        $query->where('billboard_id', $payload['billboard_id']);
+      }
+      $data = $query->get();
 
       return $this->success($data, "success getting data");
 
@@ -46,7 +50,7 @@ class ImageRepository implements ImageContract
         
         $newPayload = [
           'billboard_id' => $payload['billboard_id'],
-          'image_path'   => $path,
+          'image_path'   => "billboard/" . $filename,
           'created_at'   => $now,
           'updated_at'   => $now
         ];
