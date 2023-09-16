@@ -49,7 +49,7 @@
           <form id="formData" class="row g-3" onsubmit="return false">
             @csrf
             <div class="col-12">
-                <input type="hidden" name="id" id="dataId">
+                <input type="hidden" name="id" id="id">
                 <div class="form-group">
                     <label class="form-label w-100" for="modalAddCard">Nama</label>
                     <input id="name" name="name" class="form-control val" type="text" placeholder="Input disini">

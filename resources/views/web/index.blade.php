@@ -175,7 +175,7 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-12 col-12">
-              <img src="web/img/about.jpg" class="col-12" style="width: 100%; height: 450px" alt=""> {{-- Disini Lokasi Maps --}}
+              <img src="web/img/hero-bg.jpg" class="col-12" style="width: 100%; height: 450px" alt=""> {{-- Disini Lokasi Maps --}}
             </div>
             <div class="row icon-boxes">
                 <div class="col-md-6 mt-4">

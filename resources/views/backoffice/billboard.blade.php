@@ -112,7 +112,7 @@
             <div class="modal-body">
               <div class="text-center mb-4">
                 <h6 id="#modalheader" class="modal-title"><b>TAMBAH DATA</b></h6>
-                <p class="text-primary"><b>JURUSAN</b></p>
+                <p class="text-primary"><b>BILLBOARD</b></p>
                 <hr>
               </div>
               <form id="formData" class="row g-3" onsubmit="return false">
@@ -223,7 +223,7 @@
           <div class="modal-body">
             <div class="text-center mb-4">
               <h6 id="#modalheader" class="modal-title"><b>TAMBAH GAMBAR</b></h6>
-              <p class="text-primary"><b>JURUSAN</b></p>
+              <p class="text-primary"><b>GAMBAR BILLBOARD</b></p>
               <hr>
             </div>
             <form id="form-gambar" enctype="multipart/form-data">
@@ -313,6 +313,7 @@
         $(document).on('click', '#btn-edit', function() {
             clearInput()
             let dataId = $(this).data('id')
+            $('.modal-title').html('EDIT DATA')
             $.get(`${baseUrl}/api/v1/billboard/${dataId}`, (res) => {
                 let data = res.data
                 $.each(data, (i,d) => {
