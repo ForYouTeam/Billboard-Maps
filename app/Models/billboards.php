@@ -19,8 +19,9 @@ class billboards extends Model
         return $query
             ->leftJoin('owners as m1', 'billboards.owner_id', 'm1.id')
             ->select(
-                'billboards.*'        ,
-                'm1.name as nama_owner'      ,
+                'billboards.*'          ,
+                'm1.name as nama_owner' ,
+                'm1.phone as phone'     ,
             );
     }
 }
