@@ -97,7 +97,7 @@
             $('#images-list').html('')
             $.each(res.data, (i, d) => {
               $('#images-list').append(`
-                <img class="billboard-image col" src="{{ asset('storage/${d.image_path}') }}" alt="">
+                <img class="billboard-image col" src="{{ asset('${d.image_path}') }}" alt="">
               `)
             })
           },

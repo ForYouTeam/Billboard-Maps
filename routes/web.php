@@ -20,10 +20,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Route Backoffice
-Route::get('/dashboard'            , [DashboardController ::class, 'index'])->middleware('auth'                          )->name('dashboard'    );
+Route::get('/dashboard'   , [DashboardController ::class, 'index'])->middleware('auth'                          )->name('dashboard'    );
 Route::get('/manage-user' , [UserController      ::class, 'index'])->middleware('auth', 'role:super-admin|admin')->name('bo-user'      );
 Route::get('/owners'      , [OwnerController     ::class, 'index'])->middleware('auth', 'role:super-admin|admin')->name('bo-owners'    );
-Route::get('/billboard'   , [BillboardController ::class, 'index'])->middleware('auth', 'role:super-admin|admin')->name('bo-billboard' );
+Route::get('/billboards'  , [BillboardController ::class, 'index'])->middleware('auth', 'role:super-admin|admin')->name('bo-billboard' );
 Route::get('/users'       , [UserController      ::class, 'index'])->middleware('auth', 'role:super-admin'      )->name('bo-users'     );
 // end
 

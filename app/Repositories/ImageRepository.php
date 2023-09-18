@@ -46,7 +46,8 @@ class ImageRepository implements ImageContract
         $uuid = Uuid::uuid4()->toString();
         $extension = $image->getClientOriginalExtension();
         $filename = $uuid . '.' . $extension;
-        $path = $image->storeAs('public/billboard', $filename);
+        $path =  $image->move('billboard', $filename);
+        // $path = $image->storeAs('public/billboard', $filename);
         
         $newPayload = [
           'billboard_id' => $payload['billboard_id'],
