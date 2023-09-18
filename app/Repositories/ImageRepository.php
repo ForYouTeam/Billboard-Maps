@@ -6,6 +6,7 @@ use App\Contracts\ImageContract;
 use App\Models\images;
 use App\Traits\HttpResponseModel;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use Ramsey\Uuid\Uuid;
 
@@ -99,7 +100,8 @@ class ImageRepository implements ImageContract
       }
 
       foreach ($find->get() as $image) {
-        Storage::delete($image['image_path']);
+        // Storage::delete($image['image_path']);
+        File::delete($image['image_path']);
         $data = $this->imageModel->whereId($image['id'])->delete();
       }
 
