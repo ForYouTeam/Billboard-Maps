@@ -409,7 +409,7 @@
               description: `
                 <div class="info-card">
                   <h6>Pemilik: ${item.nama_owner}</h6>
-                  <p>Status: <span class="status">${item.empty == 0 ? 'Kosong' : 'Terisi'}</span></p>
+                  <p>Status: <span class="status">${item.empty ? 'Kosong' : 'Terisi'}</span></p>
                   <p>Alamat: ${item.address}</p>
                   <p>Nomor HP: <a href="https://wa.me/NOMOR_HP_ANDA" target="_blank" title="Chat di WhatsApp">NOMOR_HP_ANDA</a></p>
                   <button data-id="${item.id}" class="btn btn-sm btn-outline-primary show-img" type="button">Lihat Gambar</button>
