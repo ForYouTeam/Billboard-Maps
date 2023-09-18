@@ -157,7 +157,7 @@
   
               <div class="section-title">
                 <h2>Biillboard Maps</h2>
-                <p class="mb-5">Magnam dolores commodi suscipit consequatur ex aliquid</p>
+                <p class="mb-5">Berikut adalah Jumlah Billboard dan Pemilik di bawah ini</p>
               </div>
       
               <div class="row">
@@ -165,7 +165,7 @@
                 <div class="col-lg-3 col-6">
                   <div class="count-box">
                     <i class="bi bi-people"></i>
-                    <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
+                    <span data-purecounter-start="0" data-purecounter-end="{{ $pemilik }}" data-purecounter-duration="0.5" class="purecounter"></span>
                     <p>Pemilik</p>
                   </div>
                 </div>
@@ -173,15 +173,15 @@
                 <div class="col-lg-3 col-6">
                   <div class="count-box">
                     <i class="bi bi-box-arrow-down"></i>
-                    <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
-                    <p>Billboard teris</p>
+                    <span data-purecounter-start="0" data-purecounter-end="{{ $active }}" data-purecounter-duration="0.5" class="purecounter"></span>
+                    <p>Billboard Terisi</p>
                   </div>
                 </div>
       
                 <div class="col-lg-3 col-6 mt-5 mt-lg-0">
                   <div class="count-box">
                     <i class="bi bi-box-arrow-up"></i>
-                    <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" class="purecounter"></span>
+                    <span data-purecounter-start="0" data-purecounter-end="{{ $off }}" data-purecounter-duration="0.5" class="purecounter"></span>
                     <p>Billboard Tidak Terisi</p>
                   </div>
                 </div>
@@ -189,7 +189,7 @@
                 <div class="col-lg-3 col-6 mt-5 mt-lg-0">
                   <div class="count-box">
                     <i class="bi bi-boxes"></i>
-                    <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter"></span>
+                    <span data-purecounter-start="0" data-purecounter-end="{{ $active + $off }}" data-purecounter-duration="0.5" class="purecounter"></span>
                     <p>Jumlah Keseluruhan Billboard</p>
                   </div>
                 </div>
@@ -303,7 +303,7 @@
   
         <div class="me-md-auto text-center text-md-start">
           <div class="copyright">
-            &copy; Copyright <strong><span>Lumia</span></strong>. All Rights Reserved
+            &copy; Copyright <strong><span>ForYouTeam</span></strong>. All Rights Reserved
           </div>
           <div class="credits">
             Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>

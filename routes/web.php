@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Route Backoffice
-Route::get('/dashboard'            , [DashboardController ::class, 'index'])->middleware('auth'                          )->name('dashboard'    );
+Route::get('/dashboard'   , [DashboardController ::class, 'index'])->middleware('auth'                          )->name('dashboard'    );
 Route::get('/manage-user' , [UserController      ::class, 'index'])->middleware('auth', 'role:super-admin|admin')->name('bo-user'      );
 Route::get('/owners'      , [OwnerController     ::class, 'index'])->middleware('auth', 'role:super-admin|admin')->name('bo-owners'    );
 Route::get('/billboard'   , [BillboardController ::class, 'index'])->middleware('auth', 'role:super-admin|admin')->name('bo-billboard' );
@@ -30,8 +30,6 @@ Route::get('/users'       , [UserController      ::class, 'index'])->middleware(
 Route::controller(LandingPageController::class)->group(function() {
     Route::get('/', 'index');
 });
-
-
 
 Route::get ('/login'         , [AuthController ::class, 'index'  ])->name('login'         );
 Route::post('/login-process' , [AuthController ::class, 'login'  ])->name('login-process' );
