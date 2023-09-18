@@ -62,6 +62,9 @@
       }
     </style>
 @endsection
+@section('title')
+    Billboard
+@endsection
 @section('content')
 <div class="col-lg-12">
     <div class="card mb-4">
@@ -109,7 +112,7 @@
             <div class="modal-body">
               <div class="text-center mb-4">
                 <h6 id="#modalheader" class="modal-title"><b>TAMBAH DATA</b></h6>
-                <p class="text-primary"><b>JURUSAN</b></p>
+                <p class="text-primary"><b>BILLBOARD</b></p>
                 <hr>
               </div>
               <form id="formData" class="row g-3" onsubmit="return false">
@@ -120,14 +123,14 @@
                         <input type="hidden" name="id" id="id">
                         <div class="form-group">
                           <label for="" class="">Latitude</label>
-                          <input type="number" class="form-control val" name="latitude" id="latitude" placeholder="Input disini">
+                          <input type="text" class="form-control val" name="latitude" id="latitude" placeholder="Input disini">
                           <span class="text-danger small alrt" id="latitude-alert"></span>
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="form-group">
                           <label for="" class="">Longtitude</label>
-                          <input type="number" class="form-control val" name="longtitude" id="longtitude" placeholder="Input disini">
+                          <input type="text" class="form-control val" name="longtitude" id="longtitude" placeholder="Input disini">
                           <span class="text-danger small alrt" id="longtitude-alert"></span>
                         </div>
                       </div>
@@ -141,7 +144,11 @@
                       <div class="col-md-6">
                         <div class="form-group">
                           <label for="" class="">Tipe Media</label>
-                          <input type="text" class="form-control val" name="media_type" id="media_type" placeholder="Input disini">
+                          <select name="media_type" id="media_type" class="form-control">
+                            <option value="" selected disabled>-- Pilih --</option>
+                            <option value="videotrone">Videotrone</option>
+                            <option value="billboard">Billboard</option>
+                          </select>
                           <span class="text-danger small alrt" id="media_type-alert"></span>
                         </div>
                       </div>
@@ -211,12 +218,12 @@
 
     {{-- Modal --}}
     <div class="modal fade" id="modal-gambar" tabindex="-1" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered1 modal-simple modal-add-new-cc">
+      <div class="modal-dialog modal-lg modal-dialog-centered1 modal-simple modal-add-new-cc">
         <div class="modal-content p-3 p-md-5">
           <div class="modal-body">
             <div class="text-center mb-4">
               <h6 id="#modalheader" class="modal-title"><b>TAMBAH GAMBAR</b></h6>
-              <p class="text-primary"><b>JURUSAN</b></p>
+              <p class="text-primary"><b>GAMBAR BILLBOARD</b></p>
               <hr>
             </div>
             <form id="form-gambar" enctype="multipart/form-data">
@@ -306,6 +313,7 @@
         $(document).on('click', '#btn-edit', function() {
             clearInput()
             let dataId = $(this).data('id')
+            $('.modal-title').html('EDIT DATA')
             $.get(`${baseUrl}/api/v1/billboard/${dataId}`, (res) => {
                 let data = res.data
                 $.each(data, (i,d) => {
@@ -313,9 +321,9 @@
                         $(`#${i}`).val(d)
                         var isChecked = $("#empty").val();
                         if (isChecked == 1) {
-                            $("#empty").prop("checked", true);
+                          $("#empty").prop("checked", false);
                         } else {
-                            $("#empty").prop("checked", false);
+                          $("#empty").prop("checked", true);
                         }
                     }
                 })
@@ -471,9 +479,9 @@
                     let status = ''
                     
                     if (empty == 1) {
-                      status = '<span class="badge badge-success p-1">Tersedia</span>'
-                    } else{
                       status = '<span class="badge badge-danger p-1">Tidak Tersedia</span>'
+                    } else{
+                      status = '<span class="badge badge-success p-1">Tersedia</span>'
                     }
                     $('#tbody').append(`
                         <tr>

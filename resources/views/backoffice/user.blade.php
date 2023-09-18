@@ -1,4 +1,7 @@
 @extends('layout.base')
+@section('title')
+    Akun
+@endsection
 @section('content')
 <div class="col-lg-12">
     <div class="card mb-4">
@@ -35,7 +38,7 @@
 
   {{-- Modal --}}
   <div class="modal fade" id="modal-data" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered1 modal-simple modal-add-new-cc">
+    <div class="modal-dialog modal-lg modal-dialog-centered1 modal-simple modal-add-new-cc">
       <div class="modal-content p-3 p-md-5">
         <div class="modal-body">
           <div class="text-center mb-4">
@@ -46,7 +49,7 @@
           <form id="formData" class="row g-3" onsubmit="return false">
             @csrf
             <div class="col-12">
-                <input type="hidden" name="id" id="dataId">
+                <input type="hidden" name="id" id="id">
                 <div class="form-group">
                     <label class="form-label w-100" for="modalAddCard">Nama</label>
                     <input id="name" name="name" class="form-control val" type="text" placeholder="Input disini">

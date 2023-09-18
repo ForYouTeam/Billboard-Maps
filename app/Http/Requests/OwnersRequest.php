@@ -26,11 +26,11 @@ class OwnersRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|max:150',
-            'email' => 'required|max:50|email',
-            'company_name' => 'required',
-            'address' => 'required',
-            'phone' => 'required',
+            'name'         => 'required|max:150',
+            'email'        => 'required|max:50' ,
+            'company_name' => 'required'        ,
+            'address'      => 'required'        ,
+            'phone'        => 'required'        ,
         ];
     }
 
