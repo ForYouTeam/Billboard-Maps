@@ -5,6 +5,7 @@ use App\Http\Controllers\Backoffice\BillboardController;
 use App\Http\Controllers\Backoffice\DashboardController;
 use App\Http\Controllers\Backoffice\OwnerController;
 use App\Http\Controllers\Backoffice\UserController;
+use App\Http\Controllers\Web\LandingPageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,8 +27,8 @@ Route::get('/billboard'   , [BillboardController ::class, 'index'])->middleware(
 Route::get('/users'       , [UserController      ::class, 'index'])->middleware('auth', 'role:super-admin'      )->name('bo-users'     );
 // end
 
-Route::get('/', function(){
-    return view('web.index');
+Route::controller(LandingPageController::class)->group(function() {
+    Route::get('/', 'index');
 });
 
 
