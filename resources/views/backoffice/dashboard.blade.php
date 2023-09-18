@@ -150,7 +150,7 @@
                     <button data-id="${item.id}" class="btn btn-sm btn-outline-primary show-img" type="button">Lihat Gambar</button>
                   </div>
                 `,
-                isEmpty: item.empty === 1
+                isEmpty: item.empty == 1 ? true : false
             }));
 
             map.addSource('places', {
