@@ -31,8 +31,6 @@ Route::controller(LandingPageController::class)->group(function() {
     Route::get('/', 'index');
 });
 
-
-
 Route::get ('/login'         , [AuthController ::class, 'index'  ])->name('login'         );
 Route::post('/login-process' , [AuthController ::class, 'login'  ])->name('login-process' );
 Route::get ('/logout'        , [AuthController ::class, 'logout' ])->name('logout'        );
