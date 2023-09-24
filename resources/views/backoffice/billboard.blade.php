@@ -136,13 +136,6 @@
                       </div>
                       <div class="col-md-6">
                         <div class="form-group">
-                          <label for="" class="">Alamat</label>
-                          <input type="text" class="form-control val" name="address" id="address" placeholder="Input disini">
-                          <span class="text-danger small alrt" id="address-alert"></span>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group">
                           <label for="" class="">Tipe Media</label>
                           <select name="media_type" id="media_type" class="form-control">
                             <option value="" selected disabled>-- Pilih --</option>
@@ -153,31 +146,30 @@
                         </div>
                       </div>
                       <div class="col-md-6">
-                        <div class="form-group">
-                          <label for="" class="">Tinggi Tiang</label>
-                          <input type="number" class="form-control val" name="pole_height" id="pole_height" placeholder="Input disini">
-                          <span class="text-danger small alrt" id="pole_height-alert"></span>
+                        <label for="" class="">Jumlah Sisi</label>
+                        <div class="input-group mb-3">
+                          <input type="number" class="form-control" placeholder="Input disini" name="pole_height" id="pole_height">
+                          <div class="input-group-append">
+                            <span class="input-group-text" id="basic-addon2">sisi</span>
+                          </div>
                         </div>
                       </div>
                       <div class="col-md-6">
-                        <div class="form-group">
-                          <label for="" class="">Panjang</label>
-                          <input type="number" class="form-control val" name="height" id="height" placeholder="Input disini">
-                          <span class="text-danger small alrt" id="height-alert"></span>
+                        <label for="" class="">Panjang</label>
+                        <div class="input-group mb-3">
+                          <input type="number" class="form-control" placeholder="Input disini" name="height" id="height">
+                          <div class="input-group-append">
+                            <span class="input-group-text" id="basic-addon2">meter</span>
+                          </div>
                         </div>
                       </div>
                       <div class="col-md-6">
-                        <div class="form-group">
-                          <label for="" class="">Lebar</label>
-                          <input type="number" class="form-control val" name="width" id="width" placeholder="Input disini">
-                          <span class="text-danger small alrt" id="width-alert"></span>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label for="" class="">Deskripsi</label>
-                          <input type="text" class="form-control val" name="description" id="description" placeholder="Input disini">
-                          <span class="text-danger small alrt" id="description-alert"></span>
+                        <label for="" class="">Lebar</label>
+                        <div class="input-group mb-3">
+                          <input type="number" class="form-control" placeholder="Input disini" name="width" id="width">
+                          <div class="input-group-append">
+                            <span class="input-group-text" id="basic-addon2">meter</span>
+                          </div>
                         </div>
                       </div>
                       <div class="col-md-6">
@@ -199,11 +191,25 @@
                           <span class="text-danger small alrt" id="owner_id-alert"></span>
                         </div>
                       </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label for="" class="">Alamat</label>
+                          <textarea class="form-control" name="address" id="address" rows="4"></textarea>
+                          <span class="text-danger small alrt" id="address-alert"></span>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label for="" class="">Deskripsi</label>
+                          <textarea class="form-control" name="description" id="description" rows="4"></textarea>
+                          <span class="text-danger small alrt" id="description-alert"></span>
+                        </div>
+                      </div>
                   </div>
                 </div>
                 <div class="col-12 text-center">
                   <label class="switch">
-                    <input type="checkbox" name="empty" id="empty">
+                    <input type="checkbox" name="empty" id="empty" value="0">
                     <span class="slider round"></span>
                   </label><br>
                     <button onclick="postData()" class="btn btn-outline-primary my-3" style="margin-right: 0.5rem">Simpan</button>
@@ -249,7 +255,7 @@
 @section('script')
     <script>
         $('#empty').on('change', function () {
-          $(this).val() == 1 ?   $(this).val(0) : $(this).val(1)
+          $(this).val() == 0 ?   $(this).val(1) : $(this).val(0)
         });
 
         const baseUrl = `{{ config('app.url') }}`
@@ -320,7 +326,7 @@
                     if (i != "created_at" && i != "updated_at") {
                         $(`#${i}`).val(d)
                         var isChecked = $("#empty").val();
-                        if (isChecked == 1) {
+                        if (isChecked == 0) {
                           $("#empty").prop("checked", false);
                         } else {
                           $("#empty").prop("checked", true);
@@ -478,7 +484,7 @@
                     let empty = d.empty
                     let status = ''
                     
-                    if (empty == 1) {
+                    if (empty == 0) {
                       status = '<span class="badge badge-danger p-1">Tidak Tersedia</span>'
                     } else{
                       status = '<span class="badge badge-success p-1">Tersedia</span>'
