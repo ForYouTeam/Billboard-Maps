@@ -17,8 +17,8 @@ class DashboardController extends Controller
     }
     public function index()
     {
-        $active = billboards::where('empty', 0)->count();
-        $off = billboards::where('empty', 1)->count();
+        $active = billboards::where('empty', 1)->count();
+        $off = billboards::where('empty', 0)->count();
         return view('backoffice.dashboard', compact('active', 'off'));
     }
 }

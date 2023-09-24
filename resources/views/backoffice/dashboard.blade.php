@@ -134,8 +134,8 @@
                 map.loadImage(`{{ asset('assets/icon/active.png') }}`, (error, imageFalse) => {
                     if (error) throw error;
 
-                    map.addImage('custom-icon-true', imageTrue);
-                    map.addImage('custom-icon-false', imageFalse);
+                    map.addImage('custom-icon-true', imageFalse);
+                    map.addImage('custom-icon-false', imageTrue);
                 });
             });
 
@@ -144,7 +144,7 @@
                 description: `
                   <div class="info-card">
                     <h6>Pemilik: ${item.nama_owner}</h6>
-                    <p>Status: <span class="status">${item.empty == 0 ? 'Terisi' : 'Kosong'}</span></p>
+                    <p>Status: <span class="status">${item.empty == 1 ? 'Terisi' : 'Kosong'}</span></p>
                     <p>Alamat: ${item.address}</p>
                     <p>Nomor HP: <a href="https://wa.me/${item.phone}" target="_blank" title="Chat di WhatsApp">${item.phone}</a></p>
                     <button data-id="${item.id}" class="btn btn-sm btn-outline-primary show-img" type="button">Lihat Gambar</button>
