@@ -144,7 +144,7 @@
                 description: `
                   <div class="info-card">
                     <h6>Pemilik: ${item.nama_owner}</h6>
-                    <p>Status: <span class="status">${typeof item.empty === 'string' ? (item.empty !== "0" ? 'Kosong' : 'Terisi') : (!item.empty ? 'Kosong' : 'Terisi')}</span></p>
+                    <p>Status: <span class="status">${item.empty == 0 ? 'Terisi' : 'Kosong'}</span></p>
                     <p>Alamat: ${item.address}</p>
                     <p>Nomor HP: <a href="https://wa.me/${item.phone}" target="_blank" title="Chat di WhatsApp">${item.phone}</a></p>
                     <button data-id="${item.id}" class="btn btn-sm btn-outline-primary show-img" type="button">Lihat Gambar</button>

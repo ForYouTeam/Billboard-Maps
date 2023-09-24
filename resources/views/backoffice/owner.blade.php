@@ -180,7 +180,6 @@
             clearInput()
             $('#modalheader').html('TAMBAH DATA')
             $('#modal-data').modal('show');
-            $('#phone').val('62')
         }
 
         function closeModal()
@@ -275,6 +274,12 @@
 
         $(document).ready(function() 
         {
+            $('#phone').on('input', function() {
+                var inputText = $(this).val();
+                if (inputText.length > 13) {
+                $(this).val(inputText.slice(0, 13));
+                }
+            });
             getAllData()
         })
     </script>

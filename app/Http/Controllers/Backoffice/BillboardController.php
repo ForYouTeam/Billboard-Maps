@@ -47,12 +47,8 @@ class BillboardController extends Controller
 
     public function deleteData(int $id = 0) {
         $images = $this->imageRepo->deletePayload($id);
-        
-        if ($images['code'] !== 200) {
-            return response()->json($images, $images['code']); 
-        }
 
-        $result = $this->billboardRepo->deletePayload($id);
+        $result = $this->billboardRepo->deletePayload($id, $images);
         return response()->json($result, $result['code']);
     }
 }
